@@ -1,17 +1,17 @@
 //function to create screen with code as argument
 function buildScreen(code){ 
-  var div= document.createElement('div');
+  const div= document.createElement('div');
   div.innerHTML= code;
   return div.children[0];
 }
 
 function main(){
-   var canvas = document.querySelector('.main');
-   var startScreen = null;
-   var gameOverScreen = null;
-   var btnStart = null;
-   var btnRestart = null;
-   var score = null;
+   const canvas = document.querySelector('.main');
+   let startScreen = null;
+   let gameOverScreen = null;
+   let btnStart = null;
+   let btnRestart = null;
+   let score = null;
 
 //DESTROY FUNCTIONS
 
@@ -31,7 +31,7 @@ function destroyGame() {
   game.destroy();
 }
 //CREATE THINGS FUNCTIONS
-var game = null;
+let game = null;
 
 function buildGame(){
   game = new Game(canvas);
@@ -80,7 +80,7 @@ function handleGameover () {
        </div>`
        );
        canvas.appendChild(gameOverScreen);
-       var scoreElement = document.querySelector('.value');
+       const scoreElement = document.querySelector('.value');
        scoreElement.innerText = game.score;
        btnRestart = document.querySelector(".btn-restart");
        btnRestart.addEventListener('click', clickRestart);
